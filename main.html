@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonpurun Design</title>
+    <link rel="icon" type="image/png" href="asset/img/moonpurun-removebg-preview.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .floating {
+        animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+        0% {
+            transform: translate(0, 0px);
+        }
+
+        50% {
+            transform: translate(0, -15px);
+        }
+
+        100% {
+            transform: translate(0, -0px);
+        }
+    }
+
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .product-card {
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-btn {
+        transition: all 0.3s ease;
+    }
+
+    .category-btn.active {
+        background-color: #667eea;
+        color: white;
+    }
+
+    .footer-gradient {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    }
+
+    .social-icon {
+        transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-3px);
+    }
+</style>
+
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo dan Nama Brand -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-10 w-10" src="asset/img/moonpurun-removebg-preview.png" alt="Moonpurun Logo">
+                        <span class="ml-2 text-xl font-bold text-gray-800">Moonpurun Design</span>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#"
+                        class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="#"
+                        class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="#"
+                        class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Product</a>
+
+                    <a href="#"
+                        class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-600 hover:text-purple-600 focus:outline-none focus:text-purple-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Tersembunyi secara default) -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="#"
+                    class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#"
+                    class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#"
+                    class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Product</a>
+
+                <a href="#"
+                    class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Banner Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Hero Content -->
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                        Cetak & Desain <span class="text-yellow-300">Custom</span> Terpercaya
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-purple-100">
+                        Spesialis percetakan, kaos custom, dan gantungan sesuai permintaan dengan kualitas terbaik.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button
+                            class="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 pulse">
+                            Konsultasi Desain <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button
+                            class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-700 font-bold py-3 px-8 rounded-lg transition duration-300">
+                            Produk Jadi
+                        </button>
+                    </div>
+                    <div class="mt-12 flex items-center space-x-8">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold">250+</p>
+                            <p class="text-purple-200">Model Baju Tersedia</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold">98%</p>
+                            <p class="text-purple-200">Kualitas Cetak</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold">50+</p>
+                            <p class="text-purple-200">Jenis Gantungan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image/Illustration -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl p-6 shadow-2xl floating">
+                            <img src="/asset/img/gantungan_2.jpg" alt="Moonpurun Design Illustration"
+                                class="w-64 h-64 mx-auto">
+                        </div>
+                        <div
+                            class="absolute -top-4 -right-4 bg-yellow-400 text-purple-900 font-bold py-2 px-4 rounded-lg shadow-lg">
+                            Award Winning
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -left-4 bg-white text-purple-700 font-bold py-2 px-4 rounded-lg shadow-lg">
+                            <i class="fas fa-star text-yellow-500 mr-2"></i> 4.9/5 Rating
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <a href="#features" class="text-white animate-bounce">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mengapa Memilih Moonpurun Design?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kami menghadirkan kreasi custom berkualitas tinggi
+                    untuk kebutuhan percetakan, fashion, dan merchandise Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tshirt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Baju Custom Berkualitas</h3>
+                    <p class="text-gray-600">Desain kaos dan pakaian sesuai permintaan dengan bahan premium dan teknik
+                        sablon terbaik untuk hasil yang tahan lama.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-print text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Percetakan Lengkap</h3>
+                    <p class="text-gray-600">Layanan percetakan dari kartu nama, brosur, hingga merchandise dengan hasil
+                        tajam dan warna yang akurat.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fi fi-sr-rent text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Gantungan Eksklusif</h3>
+                    <p class="text-gray-600">Kreasi gantungan kunci dan aksesoris custom dengan berbagai bahan dan
+                        finishing untuk kebutuhan personal maupun bisnis.</p>
+                </div>
+            </div>
+
+            <!-- Additional row for more specific features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Desain Kreatif</h3>
+                    <p class="text-gray-600">Tim desainer kami siap mewujudkan ide-ide Anda menjadi visual yang menarik
+                        dan profesional.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shipping-fast text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Proses Cepat</h3>
+                    <p class="text-gray-600">Pengerjaan tepat waktu dengan proses yang efisien tanpa mengorbankan
+                        kualitas hasil akhir.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-holding-usd text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Harga Terjangkau</h3>
+                    <p class="text-gray-600">Kualitas premium dengan harga kompetitif, cocok untuk berbagai kebutuhan
+                        dan budget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Produk & Layanan Kami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Jelajahi berbagai layanan custom printing dan
+                    merchandise untuk kebutuhan personal dan bisnis Anda</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="category-btn active bg-purple-600 text-white px-6 py-2 rounded-full font-medium"
+                    data-category="all">
+                    Semua Produk
+                </button>
+                <button
+                    class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border border-gray-200"
+                    data-category="clothing">
+                    Baju Custom
+                </button>
+                <button
+                    class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border border-gray-200"
+                    data-category="printing">
+                    Percetakan
+                </button>
+                <button
+                    class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border border-gray-200"
+                    data-category="keychain">
+                    Gantungan
+                </button>
+                <!-- <button
+                    class="category-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border border-gray-200"
+                    data-category="merchandise">
+                    Merchandise
+                </button> -->
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md" data-category="clothing">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-tshirt text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-yellow-400 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
+                            Terlaris
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kaos Custom Sablon</h3>
+                        <p class="text-gray-600 mb-4">Kaos berkualitas dengan sablon DTF atau plastisol, tersedia
+                            berbagai warna dan ukuran.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">Rp 45.000</span>
+                            <button
+                                class="bg-purple-100 text-purple-700 hover:bg-purple-200 font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Detail Produk
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md" data-category="printing">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-print text-white text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kartu Nama Premium</h3>
+                        <p class="text-gray-600 mb-4">Kartu nama dengan berbagai finishing: spot UV, emboss, foil
+                            stamping untuk kesan profesional.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">Rp 150.000</span>
+                            <button
+                                class="bg-purple-100 text-purple-700 hover:bg-purple-200 font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Detail Produk
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md" data-category="keychain">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-key text-white text-6xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-4 right-4 bg-white text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                            Baru
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Gantungan Kunci Akrilik</h3>
+                        <p class="text-gray-600 mb-4">Gantungan kunci custom dari bahan akrilik tebal dengan printing
+                            full color yang tajam.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">Rp 12.000</span>
+                            <button
+                                class="bg-purple-100 text-purple-700 hover:bg-purple-200 font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Detail Produk
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md" data-category="printing">
+                    <div class="h-48 bg-gradient-to-r from-red-400 to-red-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-scroll text-white text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Brosur & Flyer</h3>
+                        <p class="text-gray-600 mb-4">Cetak brosur dan flyer dengan kertas premium, full color, untuk
+                            kebutuhan promosi bisnis.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">Rp 500/lembar</span>
+                            <button
+                                class="bg-purple-100 text-purple-700 hover:bg-purple-200 font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Detail Produk
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <!-- <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md" data-category="clothing">
+                    <div class="h-48 bg-gradient-to-r from-indigo-400 to-indigo-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-hoodie text-white text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Hoodie & Jaket Custom</h3>
+                        <p class="text-gray-600 mb-4">Hoodie dan jaket dengan bahan fleece premium, sablon atau
+                            embroidery sesuai permintaan.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">Rp 125.000</span>
+                            <button
+                                class="bg-purple-100 text-purple-700 hover:bg-purple-200 font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Detail Produk
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Product 6 -->
+                <!-- <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md" data-category="merchandise">
+                    <div class="h-48 bg-gradient-to-r from-teal-400 to-teal-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-mug-hot text-white text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Merchandise Package</h3>
+                        <p class="text-gray-600 mb-4">Paket merchandise lengkap: mug, tumbler, tote bag dengan desain
+                            branding perusahaan.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-purple-600">Rp 250.000</span>
+                            <button
+                                class="bg-purple-100 text-purple-700 hover:bg-purple-200 font-medium py-2 px-4 rounded-lg transition duration-300">
+                                Detail Produk
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Tidak menemukan yang Anda cari?</h3>
+                <p class="text-lg text-gray-600 mb-8">Kami menerima pesanan custom sesuai kebutuhan dan desain yang Anda
+                    inginkan</p>
+                <button
+                    class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Konsultasi Desain Gratis
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-gradient text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <img class="h-10 w-10" src="asset/img/moonpurun-removebg-preview.png" alt="Moonpurun Logo">
+                        <span class="ml-2 text-xl font-bold">Moonpurun Design</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Spesialis percetakan, baju custom, dan gantungan berkualitas. Wujudkan ide kreatif Anda menjadi
+                        produk nyata dengan kualitas terbaik dan harga terjangkau.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- <a href="#"
+                            class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a> -->
+                        <a href="#"
+                            class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <!-- <a href="#"
+                            class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-youtube"></i>
+                        </a> -->
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Menu Cepat</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Beranda</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Tentang Kami</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Layanan</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Produk</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Galeri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Kontak Kami</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-purple-400 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Alamat</p>
+                                <p class="text-gray-300">Jl. Percetakan No. 123, Jakarta Selatan, 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-purple-400 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Telepon</p>
+                                <p class="text-gray-300">+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-purple-400 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-gray-300">order@moonpurun.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-purple-400 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Jam Operasional</p>
+                                <p class="text-gray-300">Senin - Sabtu: 08.00 - 17.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp & Online Shop -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Pesan Sekarang</h3>
+                    <div class="space-y-4">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/6281234567890" target="_blank"
+                            class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105">
+                            <i class="fab fa-whatsapp text-xl mr-2"></i>
+                            Chat WhatsApp
+                        </a>
+
+                        <!-- Online Shop -->
+                        <div class="bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-bold mb-2 text-center">Toko Online Kami</h4>
+                            <p class="text-gray-300 text-sm text-center mb-3">Beli produk ready di:</p>
+                            <div class="flex justify-center space-x-3">
+                                <!-- <a href="#"
+                                    class="bg-gray-600 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center social-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a> -->
+                                <a href="#"
+                                    class="bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center social-icon">
+                                    <img src="/asset/img/icons8-shopee-48.png" class="w-7 h-7" alt="">
+                                </a>
+                                <a href="#"
+                                    class="bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center social-icon">
+                                    <img src="/asset/img/tokopedia-38846.png" class="w-7 h-7" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter -->
+                        <div class="mt-4">
+                            <p class="font-medium mb-2">Info Promo</p>
+                            <p class="text-gray-300 text-sm mb-2">Dapatkan update promo dan produk terbaru</p>
+                            <div class="flex">
+                                <input type="email" placeholder="Email Anda"
+                                    class="bg-gray-600 text-white px-3 py-2 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <button
+                                    class="bg-purple-600 hover:bg-purple-700 px-4 rounded-r-lg transition duration-300">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2024 Moonpurun Design. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Kebijakan
+                        Privasi</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Syarat &
+                        Ketentuan</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Product category filter
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-purple-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700', 'border');
+                });
+
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-purple-600', 'text-white');
+                this.classList.remove('bg-white', 'text-gray-700', 'border');
+
+                const category = this.getAttribute('data-category');
+
+                // Show/hide products based on category
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
