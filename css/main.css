@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, -15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn {
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background-color: #667eea;
+    color: white;
+}
+
+.footer-gradient {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.marketplace-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.marketplace-card:hover {
+    transform: translateY(-5px);
+    border-color: #8B5CF6;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+}
+
+.online-store-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}

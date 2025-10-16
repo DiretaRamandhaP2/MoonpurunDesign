@@ -10,84 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .hero-gradient {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .floating {
-        animation: floating 3s ease-in-out infinite;
-    }
-
-    @keyframes floating {
-        0% {
-            transform: translate(0, 0px);
-        }
-
-        50% {
-            transform: translate(0, -15px);
-        }
-
-        100% {
-            transform: translate(0, -0px);
-        }
-    }
-
-    .pulse {
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.05);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    .product-card {
-        transition: all 0.3s ease;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    .category-btn {
-        transition: all 0.3s ease;
-    }
-
-    .category-btn.active {
-        background-color: #667eea;
-        color: white;
-    }
-
-    .footer-gradient {
-        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-    }
-
-    .social-icon {
-        transition: all 0.3s ease;
-    }
-
-    .social-icon:hover {
-        transform: translateY(-3px);
-    }
-</style>
 
 <body class="bg-gray-50">
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -103,14 +27,16 @@
 
                 <!-- Menu Navigasi Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#"
+                    <a href="#home"
                         class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                    <a href="#"
+                    <a href="#features"
                         class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
-                    <a href="#"
+                    <a href="#products"
                         class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Product</a>
-
-                    <a href="#"
+                    <a href="online_shop.html"
+                        class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Online
+                        Stores</a>
+                    <a href="#contact"
                         class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
                 </div>
 
@@ -130,20 +56,22 @@
         <!-- Menu Mobile (Tersembunyi secara default) -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a href="#"
+                <a href="#hero-gradient"
                     class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#"
+                <a href="#features"
                     class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#"
+                <a href="#products"
                     class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Product</a>
-
-                <a href="#"
+                <a href="#online-stores"
+                    class="text-purple-600 font-semibold block px-3 py-2 rounded-md text-base font-medium">Online
+                    Stores</a>
+                <a href="#contact"
                     class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
             </div>
         </div>
     </nav>
     <!-- Hero Banner Section -->
-    <section class="hero-gradient text-white py-16 md:py-24">
+    <section id="home" class="hero-gradient text-white py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <!-- Hero Content -->
@@ -155,14 +83,47 @@
                         Spesialis percetakan, kaos custom, dan gantungan sesuai permintaan dengan kualitas terbaik.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <button
+                        <button onclick="openWhatsAppModal()"
                             class="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 pulse">
                             Konsultasi Desain <i class="fas fa-arrow-right ml-2"></i>
                         </button>
-                        <button
+                        <button onclick="openOnlineShop()"
                             class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-700 font-bold py-3 px-8 rounded-lg transition duration-300">
                             Produk Jadi
                         </button>
+
+                        <!-- Modal -->
+                        <div id="whatsappModal"
+                            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+                            <div class="bg-white rounded-2xl p-6 max-w-sm mx-4 shadow-xl">
+                                <!-- Icon -->
+                                <div class="text-center mb-4">
+                                    <div
+                                        class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
+                                        <span class="text-2xl">📱</span>
+                                    </div>
+                                </div>
+
+                                <!-- Content -->
+                                <h3 class="text-xl font-bold text-gray-800 text-center mb-2">Pesan Siap Dikirim!</h3>
+                                <p class="text-gray-600 text-center mb-4">
+                                    Pesan sudah otomatis terisi. Tinggal tekan <span
+                                        class="text-green-500 font-semibold">SEND</span> di WhatsApp.
+                                </p>
+
+                                <!-- Buttons -->
+                                <div class="flex space-x-3">
+                                    <button onclick="closeModal()"
+                                        class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 rounded-lg transition duration-200">
+                                        Batal
+                                    </button>
+                                    <button onclick="redirectToWhatsApp()"
+                                        class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg transition duration-200">
+                                        Buka Sekarang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="mt-12 flex items-center space-x-8">
                         <div class="text-center">
@@ -457,7 +418,7 @@
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Tidak menemukan yang Anda cari?</h3>
                 <p class="text-lg text-gray-600 mb-8">Kami menerima pesanan custom sesuai kebutuhan dan desain yang Anda
                     inginkan</p>
-                <button
+                <button onclick="openWhatsAppModal()"
                     class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
                     Konsultasi Desain Gratis
                 </button>
@@ -466,7 +427,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer-gradient text-white pt-16 pb-8">
+    <footer id="contact" class="footer-gradient text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <!-- Company Info -->
@@ -484,11 +445,11 @@
                             class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
                             <i class="fab fa-facebook-f"></i>
                         </a> -->
-                        <a href="#"
+                        <a href="https://www.instagram.com/moonpurundesign_/"
                             class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#"
+                        <a href="https://www.tiktok.com/@moonpurun_"
                             class="social-icon bg-gray-700 hover:bg-purple-600 w-10 h-10 rounded-full flex items-center justify-center">
                             <i class="fab fa-tiktok"></i>
                         </a>
@@ -503,11 +464,11 @@
                 <div>
                     <h3 class="text-lg font-bold mb-6">Menu Cepat</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Beranda</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Tentang Kami</a>
+                        <li><a href="main.html" class="text-gray-300 hover:text-white transition duration-300">Beranda</a></li>
+                        <li><a href="main.html" class="text-gray-300 hover:text-white transition duration-300">Tentang Kami</a>
                         </li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Layanan</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Produk</a>
+                        <li><a href="main.html" class="text-gray-300 hover:text-white transition duration-300">Layanan</a></li>
+                        <li><a href="main.html" class="text-gray-300 hover:text-white transition duration-300">Produk</a>
                         </li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Galeri</a></li>
                     </ul>
@@ -521,14 +482,14 @@
                             <i class="fas fa-map-marker-alt text-purple-400 mt-1 mr-3"></i>
                             <div>
                                 <p class="font-medium">Alamat</p>
-                                <p class="text-gray-300">Jl. Percetakan No. 123, Jakarta Selatan, 12345</p>
+                                <p class="text-gray-300">Jl. Tanuwijaya No.4, Empangsari, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat 46113</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-phone-alt text-purple-400 mt-1 mr-3"></i>
                             <div>
                                 <p class="font-medium">Telepon</p>
-                                <p class="text-gray-300">+62 812-3456-7890</p>
+                                <p class="text-gray-300">+62 851-5777-1815</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -553,7 +514,7 @@
                     <h3 class="text-lg font-bold mb-6">Pesan Sekarang</h3>
                     <div class="space-y-4">
                         <!-- WhatsApp -->
-                        <a href="https://wa.me/6281234567890" target="_blank"
+                        <a href="https://wa.me/6285157771815" target="_blank"
                             class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105">
                             <i class="fab fa-whatsapp text-xl mr-2"></i>
                             Chat WhatsApp
@@ -568,11 +529,11 @@
                                     class="bg-gray-600 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center social-icon">
                                     <i class="fas fa-shopping-cart"></i>
                                 </a> -->
-                                <a href="#"
+                                <a href="https://shopee.co.id/moonpurundesign"
                                     class="bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center social-icon">
                                     <img src="./asset/img/icons8-shopee-48.png" class="w-7 h-7" alt="">
                                 </a>
-                                <a href="#"
+                                <a href="https://tokopedia.com/moonpurun-design"
                                     class="bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center social-icon">
                                     <img src="./asset/img/tokopedia-38846.png" class="w-7 h-7" alt="">
                                 </a>
@@ -580,7 +541,7 @@
                         </div>
 
                         <!-- Newsletter -->
-                        <div class="mt-4">
+                        <!-- <div class="mt-4">
                             <p class="font-medium mb-2">Info Promo</p>
                             <p class="text-gray-300 text-sm mb-2">Dapatkan update promo dan produk terbaru</p>
                             <div class="flex">
@@ -591,7 +552,7 @@
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -611,40 +572,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Toggle menu mobile
-        document.getElementById('mobile-menu-button').addEventListener('click', function () {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Product category filter
-        document.querySelectorAll('.category-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                // Remove active class from all buttons
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.classList.remove('active', 'bg-purple-600', 'text-white');
-                    btn.classList.add('bg-white', 'text-gray-700', 'border');
-                });
-
-                // Add active class to clicked button
-                this.classList.add('active', 'bg-purple-600', 'text-white');
-                this.classList.remove('bg-white', 'text-gray-700', 'border');
-
-                const category = this.getAttribute('data-category');
-
-                // Show/hide products based on category
-                document.querySelectorAll('.product-card').forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
+<script src="./js/main.js"></script>
 
 </html>
