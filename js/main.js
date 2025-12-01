@@ -69,14 +69,57 @@ let simpleIndex = 0;
 function rotateSimpleContent() {
     simpleIndex = (simpleIndex + 1) % simpleContent.length;
     const content = simpleContent[simpleIndex];
-    
+
     document.getElementById('simple-rotating-image').src = content.image;
     document.getElementById('simple-rating-value').textContent = content.rating;
-    document.getElementById('simple-rotating-rating').className = 
+    document.getElementById('simple-rotating-rating').className =
         `absolute -bottom-4 -left-4 ${content.color} font-bold py-2 px-4 rounded-lg shadow-lg`;
-    document.getElementById('simple-rotating-rating').innerHTML = 
+    document.getElementById('simple-rotating-rating').innerHTML =
         `<i class="fas fa-star text-yellow-500 mr-2"></i> ${content.rating} ${content.text}`;
 }
 
 // Rotate setiap 1 menit
 setInterval(rotateSimpleContent, 60000);
+
+// Gallery Activity Filter Functionality
+document.querySelectorAll('.gallery-filter-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        // Remove active class from all buttons
+        document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+            btn.classList.remove('active', 'bg-purple-600', 'text-white');
+            btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+
+        // Add active class to clicked button
+        this.classList.add('active', 'bg-purple-600', 'text-white');
+        this.classList.remove('bg-gray-100', 'text-gray-700');
+
+        const filter = this.getAttribute('data-filter');
+
+        // Show/hide gallery items based on filter with animation
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
+});
+
+// Initialize gallery with animation
+document.addEventListener('DOMContentLoaded', function () {
+    // Add initial animation to gallery items
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+        item.style.transition = 'all 0.5s ease';
+        item.style.animationDelay = `${index * 0.1}s`;
+    });
+});
